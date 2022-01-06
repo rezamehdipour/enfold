@@ -1,0 +1,20 @@
+.ZeUWU {
+	display: inline-block;
+	text-transform: uppercase;
+	font-weight: 300;
+	color: white;
+	background-color: #45c0d6;
+	padding: 1.5rem 3rem;
+	border-radius: 3px;
+	font-size: 1.4rem;
+	&:not(.outlined):hover {
+		background-color: #5bc5d8;
+	}
+	&.outlined {
+		border: 3px solid #fff;
+		background-color: transparent;
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}

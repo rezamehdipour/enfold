@@ -1,0 +1,75 @@
+#testimonials {
+	padding-top: 10rem;
+	padding-bottom: 10rem;
+
+	.testimonial {
+		margin-top: 15rem;
+		display: flex;
+		gap: 3rem;
+		width: 100%;
+		max-width: 700px;
+		margin-right: auto;
+		margin-left: auto;
+
+		@media (max-width: 767px) {
+			gap: 1rem;
+		}
+
+		.arrow {
+			button {
+				font-size: 5rem;
+				color: #b0b0b0;
+				transition-duration: 0.2s;
+				@media (max-width: 767px) {
+					font-size: 3rem;
+				}
+				&:hover {
+					color: var(--text-primary);
+				}
+				svg {
+					cursor: pointer;
+				}
+			}
+		}
+
+		.feed {
+			.feedback {
+				transition-duration: 0.3s;
+				&.fadeOut {
+					opacity: 0;
+				}
+				p {
+					text-align: center;
+					margin-bottom: 3rem;
+					color: #b0b0b0;
+					font-size: 1.9rem;
+				}
+
+				.user {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 1rem;
+					.image {
+						img {
+							width: 80px;
+							border-radius: 50%;
+						}
+					}
+					.info {
+						display: flex;
+						flex-direction: column;
+						strong {
+							font-size: 1.9rem;
+							font-weight: 600;
+						}
+						span {
+							font-size: 1.2rem;
+							font-weight: 300;
+						}
+					}
+				}
+			}
+		}
+	}
+}

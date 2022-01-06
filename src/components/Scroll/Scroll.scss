@@ -1,0 +1,22 @@
+#scroll {
+	position: fixed;
+	right: 2rem;
+	bottom: 2rem;
+	width: 50px;
+	height: 50px;
+	background-color: #e6e6e6;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 3px;
+	opacity: 0;
+	visibility: hidden;
+	transition-duration: 0.2s;
+	@media (min-width: 768px) {
+		&.show {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}

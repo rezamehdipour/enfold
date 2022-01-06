@@ -1,0 +1,60 @@
+#portfolio {
+	.events {
+		.event {
+			a {
+				position: relative;
+				height: 100%;
+				overflow: hidden;
+				&:hover {
+					.background {
+						transform: scale(1.1);
+						filter: saturate(100%);
+					}
+					.overlay {
+						opacity: 1;
+					}
+				}
+				.background {
+					height: 100%;
+					background-size: cover;
+					background-position: center center;
+					background-repeat: no-repeat;
+					transition-duration: 0.2s;
+					filter: saturate(20%);
+				}
+				.overlay {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background-color: rgba(0, 0, 0, 0.5);
+					color: white;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					opacity: 0;
+					transition-duration: 0.2s;
+
+					h3 {
+						font-size: 2rem;
+						font-weight: 600;
+						text-align: center;
+						margin-bottom: 1rem;
+						@media (max-width: 767px) {
+							font-size: 1.6rem;
+						}
+					}
+					p {
+						font-size: 1.6rem;
+						text-align: center;
+						@media (max-width: 767px) {
+							font-size: 1.3rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}

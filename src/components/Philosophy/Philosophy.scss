@@ -1,0 +1,48 @@
+#philosophy {
+	padding-top: 10rem;
+	padding-bottom: 10rem;
+
+	background-color: #7bb0e7;
+	background-image: linear-gradient(to bottom right, #3edbac, #16a6e8);
+
+	clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+	@media (max-width: 768px) {
+		clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+	}
+
+	.wrapper {
+		display: grid;
+		grid-template-columns: 55% 35%;
+		align-items: center;
+		justify-content: space-between;
+		@media (max-width: 991px) {
+			grid-template-columns: 1fr;
+			row-gap: 2rem;
+		}
+	}
+
+	.content {
+		color: white;
+		h3 {
+			font-size: 5.3rem;
+			margin-bottom: 2rem;
+			font-weight: 500;
+			@media (max-width: 767px) {
+				font-size: 3.8rem;
+			}
+		}
+		p {
+			font-size: 2.3rem;
+			line-height: 3.7rem;
+			margin-bottom: 6rem;
+			@media (max-width: 767px) {
+				font-size: 2rem;
+			}
+		}
+	}
+	.image {
+		img {
+			max-width: 100%;
+		}
+	}
+}

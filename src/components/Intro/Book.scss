@@ -1,0 +1,231 @@
+.book {
+	position: relative;
+	width: 160px;
+	height: 220px;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+	z-index: 8;
+	cursor: pointer;
+	pointer-events: auto;
+	transform: scale(1.6);
+	&:hover {
+		.cover {
+			z-index: 0;
+			transform: rotateY(-145deg) translateZ(0);
+		}
+
+		.pages {
+			li {
+				&:nth-child(1) {
+					transform: rotateY(-30deg);
+					transition-duration: 1.5s;
+				}
+				&:nth-child(2) {
+					transform: rotateY(-35deg);
+					transition-duration: 1.8s;
+				}
+				&:nth-child(3) {
+					transform: rotateY(-118deg);
+					transition-duration: 1.6s;
+				}
+				&:nth-child(4) {
+					transform: rotateY(-130deg);
+					transition-duration: 1.4s;
+				}
+				&:nth-child(5) {
+					transform: rotateY(-140deg);
+					transition-duration: 1.2s;
+				}
+			}
+		}
+	}
+
+	.cover {
+		z-index: 7;
+		transform: rotateY(-34deg) translateZ(8px);
+		transform-origin: 0% 100%;
+		transition: all 0.8s ease, z-index 0.6s;
+		li {
+			&:first-child {
+				background-color: #eee;
+				backface-visibility: hidden;
+				transform: translateZ(2px);
+				cursor: default;
+				user-select: none;
+				&:before,
+				&:after {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					background: #999;
+					width: 4px;
+					height: 100%;
+				}
+				&:before {
+					transform: rotateY(90deg) translateZ(158px) translateX(2px);
+				}
+				&:after {
+					transform: rotateY(90deg) translateZ(-2px) translateX(2px);
+				}
+
+				.design {
+					position: absolute;
+					top: 0;
+					left: 0;
+					bottom: 0;
+					right: 0;
+					overflow: hidden;
+					z-index: 1;
+					backface-visibility: hidden;
+					img {
+						max-width: 100%;
+						height: auto;
+						vertical-align: middle;
+						border-style: none;
+					}
+				}
+			}
+			&:last-child {
+				background: #fffbec;
+				transform: rotateY(180deg) translateZ(2px);
+			}
+		}
+	}
+
+	.pages {
+		position: absolute;
+		top: 1%;
+		left: 3%;
+		width: 100%;
+		height: 98%;
+		z-index: 1;
+		transform-style: preserve-3d;
+		li {
+			transform-origin: left center;
+			background: -webkit-linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
+			box-shadow: inset 0px -1px 2px rgba(50, 50, 50, 0.1), inset -1px 0px 1px rgba(150, 150, 150, 0.2);
+			border-radius: 0px 5px 5px 0px;
+			transition-property: transform;
+			transition-timing-function: ease;
+
+			&:nth-child(1) {
+				transform: rotateY(-28deg);
+				transition-duration: 0.6s;
+			}
+			&:nth-child(2) {
+				transform: rotateY(-30deg);
+				transition-duration: 0.6s;
+
+				display: flex;
+				align-items: center;
+				.content {
+					.image {
+						display: flex;
+						justify-content: center;
+						margin-bottom: 0.5rem;
+						img {
+							border-radius: 50%;
+							width: 50%;
+						}
+					}
+					h6 {
+						text-align: center;
+					}
+				}
+			}
+			&:nth-child(3) {
+				transform: rotateY(-32deg);
+				transition-duration: 0.4s;
+			}
+			&:nth-child(4) {
+				transform: rotateY(-34deg);
+				transition-duration: 0.5s;
+			}
+			&:nth-child(5) {
+				transform: rotateY(-36deg);
+				transition-duration: 0.6s;
+			}
+		}
+	}
+
+	.back {
+		transform: rotateY(-15deg) translateZ(-8px);
+		transform-origin: 0% 100%;
+		li {
+			&:first-child {
+				background: #fffbec;
+				transform: translateZ(2px);
+			}
+			&:last-child {
+				background: #fffbec;
+				transform: translateZ(2px);
+			}
+		}
+	}
+
+	.spine {
+		width: 16px !important;
+		z-index: 0;
+		transform: rotateY(60deg) translateX(-2px) translateZ(-12px);
+
+		li {
+			&:first-child {
+				background: #eee;
+				transform: translateZ(2px);
+				&:before,
+				&:after {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 4px;
+					height: 100%;
+					background: #999;
+				}
+				&:before {
+					transform: rotateY(-90deg) translateZ(-12px);
+				}
+				&:after {
+					transform: rotateY(90deg) translateZ(-2px) translateX(2px);
+				}
+			}
+			&:last-child {
+				background: #333;
+				transform: translateZ(-2px);
+				&:before,
+				&:after {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 4px;
+					height: 16px;
+					background: #999;
+				}
+				&:before {
+					box-shadow: 5px -1px 100px 40px rgb(0 0 0 / 20%);
+					transform: rotateX(90deg) rotateZ(90deg) translateZ(-210px) translateX(2px) translateY(-6px);
+				}
+				&:after {
+					transform: rotateX(90deg) rotateZ(90deg) translateZ(8px) translateX(2px) translateY(-6px);
+				}
+			}
+		}
+	}
+
+	.cover,
+	.cover li,
+	.back,
+	.back li,
+	.pages li,
+	.spine,
+	.spine li {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform-style: preserve-3d;
+	}
+}

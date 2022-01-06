@@ -1,0 +1,32 @@
+#partners {
+	padding-top: 8rem;
+
+	.partners {
+		display: grid;
+		grid-template-columns: repeat(5, min-content);
+		row-gap: 2rem;
+		justify-content: space-between;
+		@media (max-width: 767px) {
+			grid-template-columns: repeat(3, min-content);
+		}
+		@media (max-width: 575px) {
+			grid-template-columns: repeat(2, min-content);
+		}
+
+		li {
+			transition-duration: 0.2s;
+			&:hover {
+				transform: scale(1.1);
+			}
+			a {
+				img {
+					// width: 100%;
+					max-width: 140px;
+					@media (max-width: 575px) {
+						max-width: 120px;
+					}
+				}
+			}
+		}
+	}
+}

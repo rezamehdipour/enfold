@@ -1,0 +1,77 @@
+#contact {
+	padding-top: 5rem;
+	padding-bottom: 10rem;
+	.contact {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		gap: 8rem;
+		@media (max-width: 991px) {
+			grid-template-columns: 1fr;
+		}
+
+		.image {
+			position: relative;
+			img {
+				max-width: 100%;
+			}
+			.text {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				row-gap: 3rem;
+
+				p {
+					display: flex;
+					flex-direction: column;
+					text-align: center;
+					color: #979797;
+
+					strong {
+						color: #45c0d6;
+					}
+
+					a {
+						color: #45c0d6;
+						text-transform: uppercase;
+						&:hover {
+							color: #9cc3df;
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			row-gap: 2rem;
+
+			input,
+			textarea {
+				background-color: #f6f2f7;
+				padding: 1.3rem;
+			}
+
+			.submit {
+				button {
+					padding: 1.2rem 4rem;
+					color: white;
+					background-color: #45c0d6;
+					text-transform: uppercase;
+					font-size: 1.6rem;
+					&:hover {
+						background-color: #67c4d4;
+					}
+				}
+			}
+		}
+	}
+}

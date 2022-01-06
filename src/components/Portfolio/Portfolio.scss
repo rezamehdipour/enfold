@@ -1,0 +1,21 @@
+#portfolio {
+	padding-top: 20rem;
+	min-height: 100vh;
+	background-color: #f7f7f7;
+
+	clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+	@media (max-width: 768px) {
+		clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+	}
+
+	.events {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		@media (max-width: 767px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: 575px) {
+			grid-template-columns: 1fr;
+		}
+	}
+}

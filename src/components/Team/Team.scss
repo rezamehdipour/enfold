@@ -1,0 +1,25 @@
+#team {
+	padding-top: 10rem;
+	padding-bottom: 10rem;
+	min-height: 100vh;
+
+	.team {
+		.founders {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 2rem;
+			margin-bottom: 5rem;
+			@media (max-width: 768px) {
+				grid-template-columns: 1fr;
+			}
+		}
+		.members {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 2rem;
+			@media (max-width: 768px) {
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+	}
+}

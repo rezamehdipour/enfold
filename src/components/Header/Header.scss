@@ -1,0 +1,150 @@
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9;
+	color: white;
+	height: 90px;
+	@media (max-width: 992px) {
+		background-color: #eb4f61;
+	}
+
+	.container {
+		height: 100%;
+	}
+
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 100%;
+	}
+
+	.logo {
+		img {
+			max-height: 40px;
+
+			@media (max-width: 992px) {
+				max-height: 30px;
+			}
+		}
+	}
+
+	#backdrop {
+		display: none;
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.2);
+		transition-duration: 0.4s;
+		@media (max-width: 992px) {
+			&.show {
+				display: block;
+				opacity: 1;
+			}
+		}
+	}
+
+	nav {
+		height: 100%;
+		@media (max-width: 992px) {
+			position: fixed;
+			top: 0;
+			right: -270px;
+			bottom: 0;
+			width: 270px;
+			height: 100vh;
+			background-color: #eb4f61;
+			z-index: 98;
+			opacity: 0;
+			transition-duration: 0.4s;
+			&.open {
+				right: 0px;
+				opacity: 1;
+			}
+
+			ul {
+				flex-direction: column;
+				justify-content: center;
+			}
+		}
+		ul {
+			height: 100%;
+			display: flex;
+			li {
+				height: 100%;
+				@media (max-width: 992px) {
+					height: auto;
+				}
+				a {
+					font-size: 1.4rem;
+					text-transform: uppercase;
+					padding: 2rem;
+					height: 100%;
+					display: flex;
+					align-items: center;
+					transition-duration: 0.2s;
+					&:hover {
+						color: rgb(235, 235, 235);
+					}
+				}
+			}
+		}
+	}
+	#sidebarOpen {
+		display: none;
+		position: relative;
+		z-index: 99;
+		width: 36px;
+		height: 24px;
+
+		&.change {
+			span {
+				&:nth-child(1) {
+					top: 50%;
+					transform: translateY(-50%) rotate(-135deg);
+				}
+				&:nth-child(2) {
+					opacity: 0;
+					transform: translateY(-50%) scale(0);
+				}
+				&:nth-child(3) {
+					bottom: 50%;
+					transform: translateY(50%) rotate(135deg);
+				}
+			}
+		}
+
+		span {
+			position: absolute;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 3px;
+			background-color: white;
+			transform-origin: center center;
+			transition-duration: 0.4s;
+			transition-timing-function: ease;
+			border-radius: 10px;
+
+			&:nth-child(1) {
+				top: 0;
+			}
+			&:nth-child(2) {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			&:nth-child(3) {
+				bottom: 0;
+			}
+		}
+
+		@media (max-width: 992px) {
+			display: block;
+		}
+	}
+}
