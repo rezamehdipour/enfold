@@ -1,8 +1,5 @@
 import { useState } from "react";
 
-// Icons
-import { FaBars } from "react-icons/fa";
-
 // Images
 import LogoPng from "../../images/logo.png";
 
@@ -22,7 +19,11 @@ const Header = (props) => {
 							<img src={LogoPng} alt="enfold" />
 						</a>
 					</div>
-					<div id="backdrop" className={`${sidebar ? "show" : ""}`} onClick={handleSidebarToggle}></div>
+					<div
+						id="backdrop"
+						className={`${sidebar ? "show" : ""}`}
+						onClick={handleSidebarToggle}
+					></div>
 					<nav className={`${sidebar ? "open" : ""}`}>
 						<ul>
 							<li>
@@ -45,7 +46,11 @@ const Header = (props) => {
 							</li>
 						</ul>
 					</nav>
-					<button id="sidebarOpen" className={`${sidebar ? "change" : ""}`} onClick={handleSidebarToggle}>
+					<button
+						id="sidebarOpen"
+						className={`${sidebar ? "change" : ""}`}
+						onClick={handleSidebarToggle}
+					>
 						<span></span>
 						<span></span>
 						<span></span>
